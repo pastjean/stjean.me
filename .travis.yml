@@ -3,3 +3,19 @@ go: tip
 
 install: go get github.com/spf13/hugo
 script: hugo
+
+addons:
+  ssh_known_hosts: bulbasaur.stjean.me
+
+before_deploy:
+- openssl aes-256-cbc aes-256-cbc -K $encrypted_<...>_key -iv $encrypted_<...>_iv -in deploy_rsa.enc -out /tmp/deploy_rsa -d
+- eval "$(ssh-agent -s)"
+- chmod 600 /tmp/deploy_rsa
+- ssh-add /tmp/deploy_rsa
+
+deploy:
+  provider: script
+  skip_cleanup: true
+  script: rsync -r --delete-after --quiet _site/* root@bulbasaur.stjean.me:/var/www/stjean.me
+  on:
+    branch: master

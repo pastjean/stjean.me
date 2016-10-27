@@ -1,7 +1,9 @@
 {{ partial "header" . }}
 
-<h1 class="tr normal fw1 mb0">{{ .Title }}</h1>
-<div class="tr fw1 mb4">{{ .Date.Format "Mon, Jan 2 2006" }}</div>
+<h1 class="tc normal fw1 mb0">{{ .Title }}</h1>
+  {{ if eq .Section "chronicles"}}
+    <div class="tc fw1 mb4">{{ .Date.Format "Mon, Jan 2 2006" }}</div>
+  {{ end }}
 
 <div class="lh-copy">
 {{ .Content }}
