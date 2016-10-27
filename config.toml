@@ -1,0 +1,16 @@
+baseurl = "http://stjean.me/"
+title = "stjean.me"
+languageCode = "en-us"
+
+buildDrafts = false
+buildFuture = false
+
+relativeURLs = false
+canonifyURLs = false
+
+publishdir = "_site"
+
+theme = ""
+
+[blackfriday]
+plainIDAnchors = true

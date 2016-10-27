@@ -1,0 +1,11 @@
+{{ partial "header" . }}
+
+<h1>{{ .Title }}</h1>
+
+<div class="flex flex-column">
+{{ range .Data.Pages }}
+  {{ partial "card" . }}
+{{ end }}
+</div>
+
+{{ partial "footer" . }}

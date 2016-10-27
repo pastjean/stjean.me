@@ -1,0 +1,32 @@
+# http://humanstxt.org/
+#       _   _
+#      | | (_)
+#   ___| |_ _  ___  __ _ _ __    _ __ ___   ___
+#  / __| __| |/ _ \/ _` | '_ \  | '_ ` _ \ / _ \
+#  \__ \ |_| |  __/ (_| | | | |_| | | | | |  __/
+#  |___/\__| |\___|\__,_|_| |_(_)_| |_| |_|\___|
+#         _/ |
+#        |__/  ASCII ART - Because text is beautiful
+
+# HUMAN
+
+  Pierre-Alexandre St-Jean
+  email:   pa at thisdomain
+  twitter: @pastjean
+  github:  github.com/pastjean
+  site:    well -> http://stjean.me
+
+# THANKS
+
+  I could be emotional in here but I'll just thank you for taking the time to
+  even read this file.
+
+# ABOUT
+
+  This site's source code is totally browsable/clonable on
+  https://github.com/pastjean/stjean.me
+
+# EASTER EGGS
+
+  - This file is one
+  - Others will pop up here

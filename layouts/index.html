@@ -1,0 +1,13 @@
+{{ partial "header" . }}
+
+<h1>Chronicles</h1>
+
+<div class="flex flex-column">
+{{ range .Data.Pages }}
+  {{ if eq .Section "chronicles"}}
+    {{ partial "card" . }}
+  {{ end }}
+{{ end }}
+</div>
+
+{{ partial "footer" . }}

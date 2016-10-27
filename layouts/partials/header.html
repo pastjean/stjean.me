@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="author" content="Pierre-Alexandre St-Jean">
+    <link type="text/plain" rel="author" href="{{ .Site.BaseURL }}humans.txt">
+
+    <title>{{ .Title }} &middot; pa.stjean.me</title>
+    
+    <script type="text/ascii-art">
+    <!--
+         _   _
+        | | (_)
+     ___| |_ _  ___  __ _ _ __    _ __ ___   ___
+    / __| __| |/ _ \/ _` | '_ \  | '_ ` _ \ / _ \
+    \__ \ |_| |  __/ (_| | | | |_| | | | | |  __/
+    |___/\__| |\___|\__,_|_| |_(_)_| |_| |_|\___|
+           _/ |
+          |__/  ASCII ART - Because code is beautiful
+    -->
+    </script>
+
+    <link rel="icon" href="{{ .Site.BaseURL }}favicon.ico">
+    <link rel="stylesheet" href="https://unpkg.com/tachyons@4.5.3/css/tachyons.min.css"/>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/monokai-sublime.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    <style>
+      .blue{ color: #053CC6; }
+      .bg-blue{ background-color: #053CC6; }
+      .h05{ height: 0.5rem; }
+      .lh2{ line-height: 2; }
+      .b--blue { border-color: #053CC6; }
+    
+    </style>
+
+    <link href="{{ .Site.BaseURL }}index.xml" rel="alternate" type="application/rss+xml" title="pa.stjean.me" />
+
+  </head>
+  <body class="avenir">
+    <div class="w-100 bg-blue h05"></div>
+    <div class="mw7-ns pa3 center">
+
+<!--    <header class="flex justify-between mt1 mb2 lh-solid"> -->
+    <header class="lh2 flex flex-wrap justify-between items-center flex-column flex-row-ns">
+      <a href="{{ .Site.BaseURL }}" class="h2">
+        {{ partial "logo.svg" }}
+      </a>
+
+      <nav class="flex justify-between">
+          <a class="link dim pa2 blue" href="{{ .Site.BaseURL }}/">Chronicles</a>
+          <!--<a class="link dim pa2 blue" href="{{ .Site.BaseURL }}/recipes">Recipes</a>-->
+          <!--<a class="link dim pa2 blue" href="{{ .Site.BaseURL }}/lab">Lab</a>-->
+          <a class="link dim pa2 blue" href="{{ .Site.BaseURL }}/about">Me</a>
+      </nav>
+    </header>
+    <main>

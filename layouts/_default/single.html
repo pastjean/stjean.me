@@ -1,0 +1,10 @@
+{{ partial "header" . }}
+
+<h1 class="tr normal fw1 mb0">{{ .Title }}</h1>
+<div class="tr fw1 mb4">{{ .Date.Format "Mon, Jan 2 2006" }}</div>
+
+<div class="lh-copy">
+{{ .Content }}
+</div>
+
+{{ partial "footer" . }}
