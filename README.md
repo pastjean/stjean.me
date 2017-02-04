@@ -37,3 +37,4 @@
 - Syntax highlighting http://prismjs.com/
 - Emojies
 - Math (katex)
+- Google docs like navigation
