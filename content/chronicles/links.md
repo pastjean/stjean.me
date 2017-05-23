@@ -27,5 +27,4 @@ Really random and non ordered papers I read and i loved.
 - [Brewer’s Conjecture and the Feasibility of Consistent, Available, Partition-Tolerant Web Services](http://dl.acm.org/citation.cfm?id=564601&CFID=609557487&CFTOKEN=15997970) - aka the CAP theorem
 - [SWIM: Scalable Weakly-consistent Infection-style Process Group Membership Protocol](http://www.cs.cornell.edu/~asdas/research/dsn02-SWIM.pdf) - gossip protocol
 - [In Search of an Understandable Consensus Algorithm (Extended Version)](https://raft.github.io/raft.pdf). Raft is the new Paxos more at https://raft.github.io/
-
-<!-- for ma talk  // http://fabric8.io/presentations/kubernetes-voxxed-2016-02/#/-->
+- [Push On green](https://www.usenix.org/system/files/login/articles/login_1410_05_klein.pdf). Good guidelines for big and beautiful automated rollouts.
