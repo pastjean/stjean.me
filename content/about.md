@@ -9,24 +9,22 @@ to conquer and seafearers to hear stories from to. I am also know as a
 practician of a foreign art, which consists of looking at a screen fill with 
 small coloured letters on a dark screen.
 
-You can find me on [Twitter][], [GitHub][] and hitting the waves.
+![wonderlands](/images/about/me.jpg)
+
+You can find me hitting the waves or, on [Twitter][] and [GitHub][].
 
 I work as at [Coveo][] where I do software engineering,
-some [go][], microservices and good beer propaganda. The team
- over there is awesome, you should check us out.
+some [go][], microservices architecture and good beer propaganda.
 
-I studied sofware engineering at [ETS][] and helped awesome guys build the 
+I studied sofware engineering at [ETS][] and helped awesome guys build the
 [Chinook][], a wind turbine vehicule. I also worked as a research assistant in
 computational systems biology. Tough, biology is still something I hardly
 understand.
 
-I grew up in [Sept-Îles, Qc][7i-map], a far foreign place, but it's a place
-everyone should go and explore. A place with enough beach and wind for me
-to kitesurf for a century, never touching the same sand twice. I warn you out
-though, it's cold, you'll need a hard skin or an oddly wired brain to go in 
-there unprepared.
-
-![wonderlands](/images/about/me.jpg)
+I grew up in [Sept-Îles, Qc][7i-map], a far and foreign place, but it's a place
+everyone should go and explore. A place with enough beach and wind for you
+to kitesurf for a century, never touching the same sand twice. Be warned though,
+it's cold, you'll need a hard skin or an oddly wired brain to go in there unprepared.
 
 [twitter]: https://twitter.com/pastjean
 [github]: https://github.com/pastjean

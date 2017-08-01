@@ -36,8 +36,10 @@
 
     <link rel="icon" href="{{ .Site.BaseURL }}favicon.ico">
     <link rel="stylesheet" href="https://unpkg.com/tachyons@4.5.3/css/tachyons.min.css"/>
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/monokai-sublime.min.css">
-    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/highlight.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/monokai-sublime.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/highlight.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i|Raleway:400" rel="stylesheet">
+
     <script>hljs.initHighlightingOnLoad();</script>
 
     <style>
@@ -46,13 +48,28 @@
       .h05{ height: 0.5rem; }
       .lh2{ line-height: 2; }
       .b--blue { border-color: #053CC6; }
-    
+      body{
+        font-family: 'Raleway', sans-serif;
+        letter-spacing: 0;
+        font-weight: 400;
+        font-style: normal;
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        -moz-font-feature-settings: "liga" on;
+        font-size: 18px;
+        line-height: 1.4;
+      }
+      h1,h2,h3,h4,h5{
+        font-family: 'Raleway', sans-serif;
+      }
+      .lora{font-family: 'Lora', serif;}
     </style>
 
     <link href="{{ .Site.BaseURL }}index.xml" rel="alternate" type="application/rss+xml" title="pa.stjean.me" />
 
   </head>
-  <body class="avenir">
+  <body>
     <div class="w-100 bg-blue h05"></div>
     <div class="mw7-ns pa3 center">
 
@@ -63,7 +80,7 @@
       </a>
 
       <nav class="flex justify-between">
-          <a class="link dim pa2 blue" href="{{ .Site.BaseURL }}/">Chronicles</a>
+          <a class="link dim pa2 blue" href="{{ .Site.BaseURL }}">Chronicles</a>
           <!--<a class="link dim pa2 blue" href="{{ .Site.BaseURL }}/recipes">Recipes</a>-->
           <!--<a class="link dim pa2 blue" href="{{ .Site.BaseURL }}/lab">Lab</a>-->
           <a class="link dim pa2 blue" href="{{ .Site.BaseURL }}/about">Me</a>
