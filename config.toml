@@ -10,7 +10,5 @@ canonifyURLs = false
 
 publishdir = "_site"
 
-theme = ""
-
 [blackfriday]
 plainIDAnchors = true
