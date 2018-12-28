@@ -38,18 +38,25 @@
     <link rel="stylesheet" href="https://unpkg.com/tachyons@4.5.3/css/tachyons.min.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/monokai-sublime.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/highlight.min.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i|Raleway:400" rel="stylesheet">
 
-    <script>hljs.initHighlightingOnLoad();</script>
+    <script defer>hljs.initHighlightingOnLoad();</script>
 
     <style>
+      @font-face {
+        font-family: system;
+        font-style: normal;
+        font-weight: 300;
+        src: local(".SFNSText-Light"), local(".HelveticaNeueDeskInterface-Light"), local(".LucidaGrandeUI"), local("Ubuntu Light"), local("Segoe UI Light"), local("Roboto-Light"), local("DroidSans"), local("Tahoma");
+      }
+
       .blue{ color: #053CC6; }
       .bg-blue{ background-color: #053CC6; }
       .h05{ height: 0.5rem; }
       .lh2{ line-height: 2; }
       .b--blue { border-color: #053CC6; }
+
       body{
-        font-family: 'Raleway', sans-serif;
+        font-family: "system";
         letter-spacing: 0;
         font-weight: 400;
         font-style: normal;
@@ -57,16 +64,17 @@
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         -moz-font-feature-settings: "liga" on;
-        font-size: 18px;
+        font-size: 20px;
         line-height: 1.4;
       }
-      h1,h2,h3,h4,h5{
-        font-family: 'Raleway', sans-serif;
+      
+      h1,h2,h3,h4,h5 {
+        font-family: "system";
       }
-      .lora{font-family: 'Lora', serif;}
     </style>
 
     <link href="{{ .Site.BaseURL }}index.xml" rel="alternate" type="application/rss+xml" title="pa.stjean.me" />
+    {{ partial "opengraph.html" . }}
 
   </head>
   <body>
