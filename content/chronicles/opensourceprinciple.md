@@ -1,6 +1,6 @@
 ---
 title: "Asynchronous Decisions Making Stolen From Open Source Communities"
-date: "2018-10-25T15:12:00-05:00"
+date: "2022-10-25T15:12:00-05:00"
 tags:
   - opensource
   - rust

@@ -15,7 +15,7 @@ My resume can be found [here][resume]
 
 You can find me hitting the waves or, on [Twitter] and [GitHub].
 
-I am currently doing awesome things as a Senior software developer at [Pleo.io].
+I am currently doing software engineering as a remote senior software developer at [Pleo.io], rust, java, kotlin, BI, remote work structure...
 
 I was previously at [Coveo] where I did a lot of things like software engineering, deploying kubernetes, some [go] and java, microservices architecture and good beer propaganda.
 
