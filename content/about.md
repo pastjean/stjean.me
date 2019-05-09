@@ -13,9 +13,9 @@ My resume can be found [here][resume]
 
 ![wonderlands](/images/about/me.jpg)
 
-You can find me hitting the waves, the mountains or, on [Twitter] and [GitHub].
+You can find me hitting the waves, the mountains or, on [Twitter] and [GitHub]. While not a am deeply interested in software engineering culture, distributed systems, programming languagues (go & rust), BI, remote work culture, organizing work and autonomous teams...
 
-I am currently doing software engineering as a remote senior software developer at [Pleo.io], go, rust, Analytics, BI, kotlin, BI, remote work structure...
+I am currently doing software engineering as a remote senior software developer at [Pleo.io].
 
 I was previously at [Coveo] where I did a lot of things like software engineering, deploying kubernetes, some go and java, microservices architecture and good beer propaganda.
 
