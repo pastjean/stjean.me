@@ -1,10 +1,10 @@
 {{ partial "header" . }}
 
-<h1>Chronicles</h1>
+<h1 class="tc normal fw1 mb0">Chronicles</h1>
 
 <div class="flex flex-column">
-{{ range .Data.Pages }}
-  {{ if eq .Section "chronicles"}}
+{{ range .Site.AllPages }}
+  {{ if and (eq .Section "chronicles") (.Page.IsPage)}}
     {{ partial "card" . }}
   {{ end }}
 {{ end }}

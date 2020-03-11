@@ -1,18 +1,13 @@
 # stjean.me
 
-
--- For future iterations 
-
 ## TODO
 
-- Setup Webpack + Babel
-- Go
-- analytics
+- Go / rust / something
+- server side anonymous analytics
 
-## possibly needed web tech
-
-- File API && DnD  http://www.html5rocks.com/en/tutorials/file/dndfiles/
-- History  API http://diveintohtml5.info/history.html
+- [ ] Grid
+- [ ] Post
+- [ ] Private analytics
 
 ## Notes
 

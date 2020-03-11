@@ -14,7 +14,7 @@
   email:   pa at thisdomain
   twitter: @pastjean
   github:  github.com/pastjean
-  site:    well -> http://stjean.me
+  site:    http://stjean.me
 
 # THANKS
 
@@ -25,8 +25,3 @@
 
   This site's source code is totally browsable/clonable on
   https://github.com/pastjean/stjean.me
-
-# EASTER EGGS
-
-  - This file is one
-  - Others will pop up here

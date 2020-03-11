@@ -1,17 +1,19 @@
 ---
-title: "Asynchronous Decisions Making Stolen From Open Source Communities"
-date: "2022-10-25T15:12:00-05:00"
+title: "Asynchronous Decisions Making"
+date: "2020-03-09T15:12:00-05:00"
 tags:
   - opensource
+  - open-source
+  - rfc
   - rust
   - companies
 ---
 
-When working in any team that needs to take decisions, you want to take the best decision possible to make your team go forward the best way possible.
+When working in any team that needs to take decisions, well every one of them.You want to take the best decision possible to make your team go forward.
 
-Open source communities are well known for being awesome at working asynchronously, innovativly, having debates and multiple conversations minimizing real time talk, meetings and chat.
+Open source communities are well known for being awesome at working asynchronously, innovativly, having healthy (and less healthy) debates minimizing meetings and chats.
 
-Why not borrow some practices from opensource communities and bring those to your internal company community.
+Why not borrow some practices from open-source communities and bring those to your internal company community.
 
 ## Introducing changes through asynchronous decisions
 
@@ -19,21 +21,19 @@ Rust has this awesome RFCs (request for comments) process, where everyone inside
 
 Why not apply this RFC process internally in your company or product team. I made this experiment recently at [Pleo](https://pleo.io) and it turned out giving us great results.
 
-## Template for change introduction
+_ps. Python has its PEP process. A lots of other communities got theirs_
 
-The template for Rust was minimally adapted.
+## Change introduction
+
+It's pretty simple overall
+
+1. You create a repository or have a way to share documents and comment on them
+2. Have a decent template.
+  The template for Rust was minimally adapted as it is a really great one
+3. Use review requests as a way to comment and have discussions on the proposals.
+4. Establish a "closing date" so that discussions don't drag on forever
+
+Lie down some ground rules that minimize bikeshedding.
 
 
-```markdown
-
-```
-
-Productive technical discussions
-
-developers are usually somewhat introverts with big opinions (at least that's I feel I am)
-
-
-
-------------
-
-Thanks to the Rust programming language [RFC](https://github.com/rust/rfcs) process.
+Small note: Thanks to the Rust programming language [RFC](https://github.com/rust/rfcs) process.
