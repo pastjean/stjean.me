@@ -4,7 +4,7 @@
 #
 
 app = "stjean-me"
-primary_region = "yul" # Montreal region
+primary_region = "yyz" # Toronto region
 
 [build]
 dockerfile = "Dockerfile"
