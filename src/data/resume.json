@@ -1,0 +1,189 @@
+{
+  "personal": {
+    "name": "Pierre-Alexandre St-Jean",
+    "title": "Principal Software Engineer",
+    "photo": "/profile.jpg",
+    "location": "Quebec, QC, Canada",
+    "phone": "1 (418) 952-9232",
+    "website": "pa@stjean.me"
+  },
+  "about": {
+    "title": "About Me",
+    "description": "Engineering leader with 12+ years building and scaling high-performance teams. Proven track record in fintech, compliance (SOC2), and full-stack architecture. Experience growing engineering organizations from startup to scale-up environments."
+  },
+  "education": [
+    {
+      "title": "Education",
+      "institution": "B.Eng. Software Engineering",
+      "school": "École de Technologie Supérieure",
+      "year": "2013",
+      "location": "Montreal, Canada"
+    },
+    {
+      "title": "",
+      "institution": "Technical College (DEC) - Computer Technology",
+      "school": "Cégep de Sept-Îles",
+      "year": "2009",
+      "location": "Sept-Îles, Canada"
+    }
+  ],
+  "links": {
+    "title": "Links",
+    "items": [
+      {
+        "label": "Personal Website",
+        "url": "https://pa.stjean.me"
+      },
+      {
+        "label": "Github",
+        "url": "https://github.com/pastjean"
+      }
+    ]
+  },
+  "talks": [
+    {
+      "title": "The Rust Programming Language",
+      "location": "Cabane.io",
+      "date": "October 2018"
+    },
+    {
+      "title": "Microservices Without Interruption",
+      "location": "Web à Québec",
+      "date": "April 2017"
+    }
+  ],
+  "projects": [
+    {
+      "title": "BlackboxDB.io (Sold)",
+      "role": "Full Stack Developer",
+      "period": "Jan 2018 - June 2021",
+      "location": "Québec, Canada",
+      "description": "Built a passwordless nodejs & rust analytics solution to optimize water filters in the mining industry"
+    }
+  ],
+  "workExperience": [
+    {
+      "title": "Principal Engineer",
+      "company": "Pinata",
+      "period": "March 2025 - August 2025",
+      "location": "Remote",
+      "responsibilities": [
+        "Migrated Infrastructure resources from AWS to Cloudflare and Digital Ocean to reduce infrastructure cost by 50%",
+        "Introduced River a queing & job system to allow multiple job types, running in parallel",
+        "Added import mechanism from multiple IPFS provider allowing clients to migrate from Competitors"
+      ]
+    },
+    {
+      "title": "Principal Software Engineer & Information Security Officer",
+      "company": "Blissbook",
+      "period": "February 2023 - March 2025",
+      "location": "Remote",
+      "responsibilities": [
+        "Led security and engineering projects for HR software platform, achieving SOC 2 Type I and II certification in under 3 months",
+        "Architected and developed HR data synchronization system for organizations with 50k+ employees, supporting 50+ HR platforms",
+        "Decreased deployment time from 3 hours to under 15 minutes by implementing automated and simple CI/CD processes and optimizing software",
+        "Collaborated with the CEO to develop thorough security policies and compliance procedures"
+      ]
+    },
+    {
+      "title": "Lead Software Engineer - Infrastructure",
+      "company": "Baseten",
+      "period": "October 2021 - October 2022",
+      "location": "Remote",
+      "responsibilities": [
+        "Reduced AWS infrastructure costs by 60% through optimizing machine size, number of running instances and migrating to spot instance",
+        "Implemented OpenTelemetry observability stack and structured logging system platform-wide",
+        "Accelerated SOC2 certification by automating infrastructure, and implementing Drata",
+        "Managed Kubernetes-based application Python/Django platform for hosting AI models"
+      ]
+    },
+    {
+      "title": "Senior Software Developer & Site Reliability Engineer",
+      "company": "Braver Health",
+      "period": "February 2021 - October 2021",
+      "location": "Quebec",
+      "responsibilities": [
+        "Led Quebec health law accreditation projects",
+        "Designed and implemented services using Rust, Elixir, Python, and Flutter",
+        "Enhanced Google Cloud Platform and Kubernetes infrastructure",
+        "Put observability and alerting tools in place",
+        "Created an efficient incident response plan"
+      ]
+    },
+    {
+      "title": "Engineering Manager",
+      "company": "1Password",
+      "period": "August 2020 - February 2021",
+      "location": "Remote",
+      "responsibilities": [
+        "Received 'Security Employee of the Month' award for discover and address a CVE using typed Go",
+        "Led a team of 6 (3 Customer Support Level 3/4 and 3 Developers) in successfully integrating 1Password with Identity providers (Azure, Okta, etc.) via the SCIM protocol"
+      ]
+    },
+    {
+      "title": "Engineering Team Lead - Billing & Internationalization",
+      "company": "Pleo",
+      "period": "September 2019 - August 2020",
+      "location": "Remote",
+      "responsibilities": [
+        "Leading a team of 5, Project priorization and analysis, technical and non functional, 1 on 1s",
+        "Architecture of AWS & Google cloud based Financial software",
+        "Migration to new pricing plans, localization development",
+        "Lead the BI and analytics team for the Pleo product"
+      ]
+    },
+    {
+      "title": "Senior Software Engineer",
+      "company": "Pleo",
+      "period": "September 2017 - September 2019",
+      "location": "Remote",
+      "responsibilities": [
+        "Architected AWS/GCP-based financial software processing millions in transactions",
+        "Implemented synchronization with banking and credit card processing systems",
+        "Architected and improved scalability of fraud detection mechanism",
+        "Built analytics infrastructure supporting business intelligence initiatives",
+        "Scaled the platform from 15 to 400 employees while maintaining system reliability"
+      ]
+    },
+    {
+      "title": "Engineering Team Lead",
+      "company": "Coveo",
+      "period": "January 2017 - September 2017",
+      "location": "Capitale-Nationale, Quebec, Canada",
+      "responsibilities": [
+        "Lead the cloud infrastructure team (planification, one on one, ...)",
+        "Deployment of container clusters (Kubernetes)",
+        "Lead the infrastructure as code effort through all the company",
+        "Organize and participate in hackathons and conferences",
+        "Build Cloud infrastructure platform management software",
+        "Contibute to Kubernetes open-source project"
+      ]
+    },
+    {
+      "title": "Lab Teacher / Software Engineering Processes",
+      "company": "Université Laval",
+      "period": "September 2015 - May 2016",
+      "location": "Capitale-Nationale, Quebec, Canada",
+      "responsibilities": [
+        "Build a new practical lab on software engineering processes, based on Github, Travis-ci",
+        "Give lectures on software engineering processes in the industry",
+        "Help students with the laboratories"
+      ]
+    },
+    {
+      "title": "Software Developer",
+      "company": "Coveo",
+      "period": "December 2014 - January 2017",
+      "location": "Capitale-Nationale, Quebec, Canada",
+      "responsibilities": [
+        "Analytics backend developer, >2.5M events/day",
+        "Database Optimizations SQL(Redshift) Schema and queries",
+        "Implementation of Load balancing of Database clusters",
+        "Build automated Cloud infrastructure for demo environment (docker, consul & AWS)",
+        "Contibute to Kubernetes",
+        "Organize and participate in hackathons and conferences",
+        "Build front-end demos and applications using Coveo's platform"
+      ]
+    }
+  ]
+}
