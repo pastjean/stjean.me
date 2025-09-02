@@ -1,15 +1,13 @@
-# syntax = docker/dockerfile:1
+FROM node:18-alpine
 
-FROM nginx:alpine
+WORKDIR /app
 
-# Copy the website files from src to nginx's default serving directory
-COPY src /usr/share/nginx/html
+COPY package*.json ./
+RUN npm ci --only=production
 
-# Copy custom nginx configuration
-COPY nginx.conf /etc/nginx/conf.d/default.conf
+COPY . .
+RUN npm run build
 
-# Expose port 80
-EXPOSE 80
+EXPOSE 3000
 
-# Start nginx in the foreground
-CMD ["nginx", "-g", "daemon off;"]
+CMD ["npm", "start"]
