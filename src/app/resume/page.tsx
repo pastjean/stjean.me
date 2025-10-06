@@ -44,27 +44,30 @@ export default function Resume() {
         </div>
       </div>
 
+      {/* About Me - Full Width on Top */}
+      <div className="mb-8">
+        <h2 className="text-lg font-bold text-gray-900 mb-3 tracking-wide border-b border-gray-300 pb-1">
+          {resumeData.about.title}
+        </h2>
+        <p className="text-sm text-gray-700 leading-relaxed">
+          {resumeData.about.description}
+        </p>
+      </div>
+
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         {/* Left Column */}
         <div className="lg:col-span-1 space-y-6">
-          {/* About Me Section */}
-          <div>
-            <h2 className="text-lg font-bold text-gray-900 mb-3 tracking-wide border-b border-gray-300 pb-1">
-              {resumeData.about.title}
-            </h2>
-            <p className="text-sm text-gray-700 leading-relaxed">
-              {resumeData.about.description}
-            </p>
-          </div>
-
           {/* Education Section */}
           <div>
             <h2 className="text-lg font-bold text-gray-900 mb-3 tracking-wide border-b border-gray-300 pb-1">
               EDUCATION
             </h2>
             <div className="space-y-4">
-              {resumeData.education.map((edu, index) => (
-                <div key={index} className="flex gap-3">
+              {resumeData.education.map((edu) => (
+                <div
+                  key={`${edu.institution}-${edu.year}-${edu.location}`}
+                  className="flex gap-3"
+                >
                   <div className="w-4 h-4 rounded-full bg-gray-400 flex-shrink-0 mt-1"></div>
                   <div>
                     <h3 className="font-semibold text-sm text-gray-900">
@@ -86,8 +89,8 @@ export default function Resume() {
               {resumeData.links.title}
             </h2>
             <div className="space-y-2">
-              {resumeData.links.items.map((link, index) => (
-                <div key={index}>
+              {resumeData.links.items.map((link) => (
+                <div key={link.url}>
                   <h3 className="font-semibold text-sm text-gray-900">
                     {link.label}
                   </h3>
@@ -108,8 +111,11 @@ export default function Resume() {
               PROJECTS
             </h2>
             <div className="space-y-4">
-              {resumeData.projects.map((project, index) => (
-                <div key={index} className="flex gap-3">
+              {resumeData.projects.map((project) => (
+                <div
+                  key={`${project.title}-${project.period}-${project.location}`}
+                  className="flex gap-3"
+                >
                   <div className="w-4 h-4 rounded-full bg-gray-400 flex-shrink-0 mt-1"></div>
                   <div>
                     <h3 className="font-semibold text-sm text-gray-900">
@@ -134,8 +140,8 @@ export default function Resume() {
               TALKS
             </h2>
             <div className="space-y-4">
-              {resumeData.talks.map((talk, index) => (
-                <div key={index} className="flex gap-3">
+              {resumeData.talks.map((talk) => (
+                <div key={`${talk.title}-${talk.date}`} className="flex gap-3">
                   <div className="w-4 h-4 rounded-full bg-gray-400 flex-shrink-0 mt-1"></div>
                   <div>
                     <h3 className="font-semibold text-sm text-gray-900">
@@ -157,8 +163,11 @@ export default function Resume() {
           </h2>
 
           <div className="space-y-6">
-            {resumeData.workExperience.map((job, index) => (
-              <div key={index} className="flex gap-4">
+            {resumeData.workExperience.map((job) => (
+              <div
+                key={`${job.title}-${job.company}-${job.period}`}
+                className="flex gap-4"
+              >
                 <div className="w-4 h-4 rounded-full bg-gray-400 flex-shrink-0 mt-1"></div>
                 <div className="flex-1">
                   <div className="mb-2">
@@ -173,8 +182,11 @@ export default function Resume() {
                     </p>
                   </div>
                   <ul className="space-y-1 text-xs text-gray-700">
-                    {job.responsibilities.map((responsibility, idx) => (
-                      <li key={idx} className="leading-relaxed">
+                    {job.responsibilities.map((responsibility) => (
+                      <li
+                        key={`${job.title}-${job.company}-${responsibility}`}
+                        className="leading-relaxed"
+                      >
                         • {responsibility}
                       </li>
                     ))}
