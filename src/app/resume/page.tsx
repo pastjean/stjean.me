@@ -1,5 +1,5 @@
 import Image from "next/image";
-import resumeData from "@/data/resume.json";
+import { data as resumeData } from "@/data/resume";
 
 export default function Resume() {
   return (
