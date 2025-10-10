@@ -9,7 +9,8 @@ export const data = {
   },
   about: {
     title: "About Me",
-    description: `Full-stack engineer focusing on backend, systems, and infrastructure with 12+ years in SaaS, fintech, and regulated environments. I built payment platforms, credit card fraud detection, HR & SCIM sync for 50k+ employee orgs, and analytics at scale delivering 2.5M+ events daily. Language agnostic, with strong suits in Go, TypeScript/JavaScript, and Rust. I handle backend code, infrastructure, compliance, and lead teams to success. I Thrive in ambiguous situations, ship iteratively, and excel at aligning everyone - from CEOs, sales to junior engineers.`,
+    tech: "Core Technologies: Go, Rust, TypeScript, Python, React | Kubernetes, AWS, GCP | Event-driven systems, compliance automation",
+    description: `Full-stack engineer focusing on backend, systems, and infrastructure with 12+ years in SaaS, fintech, and regulated environments. I built payment platforms, credit card fraud detection, HR & SCIM sync for 50k+ employee orgs, and analytics at scale delivering 2.5M+ events daily. Language agnostic, with strong suits in Go, TypeScript/JavaScript, and Rust. I handle backend code, infrastructure, compliance, and lead small teams when needed. I thrive in ambiguous situations, ship iteratively, and excel at aligning everyone - from CEOs, sales to junior engineers.`,
   },
   education: [
     {
@@ -36,12 +37,12 @@ export const data = {
   talks: [
     {
       title: "The Rust Programming Language",
-      location: "Cabane.io",
+      location: "Cabane.io | Québec, Canada",
       date: "October 2018",
     },
     {
       title: "Microservices Without Interruption",
-      location: "Web à Québec",
+      location: "Web à Québec | Québec, Canada",
       date: "April 2017",
     },
   ],
@@ -73,11 +74,10 @@ export const data = {
       period: "February 2023 - March 2025",
       location: "Remote",
       responsibilities: [
-        "Designed and built frontend, backend and infrastructure for HR data synchronization engine in typescript processing employee data for 50k+ person organizations across 50+ HR platforms (BambooHR, Workday, ADP, etc.)",
-        "Built event-driven pipeline handling real-time employee lifecycle changes (hires, terminations, role changes) with idempotent processing and conflict resolution",
-        "Designed webhook receiver and polling systems to normalize data from inconsistent third-party APIs into unified internal schema",
+        "Built TypeScript HR sync engine (frontend, backend & infra) for 50k+ employee orgs, integrating 50+ platforms (e.g., BambooHR, Workday, ADP)",
+        "Built event-driven pipeline handling real-time employee lifecycle changes with idempotent processing and conflict resolution",
         "Led SOC 2 (Type I and II) certifications and achieve compliance in under 3 months through infrastructure automation and security controls",
-        "Reduced deployment time from 3 hours to < 15 minutes by optimizing Docker builds and simplifying (Github actions) CI/CD pipeline",
+        "Reduced deployment time from 3 hours to <15 minutes by optimizing Docker builds and simplifying Github actions pipelines",
       ],
     },
     {
@@ -87,8 +87,7 @@ export const data = {
       location: "Remote",
       responsibilities: [
         "Built observability infrastructure using OpenTelemetry for Python/Django platform hosting ML models on Kubernetes",
-        "Implemented structured logging system providing request tracing across microservices for debugging model inference issues",
-        "Reduced AWS costs 60% by rightsizing instances, implementing spot instances, and optimizing resource allocation",
+        "Reduced AWS costs 60% by optimizing resource allocation and introducing spot instances ",
         "Automated SOC 2 compliance infrastructure using Drata, accelerating certification timeline",
       ],
     },
@@ -96,7 +95,7 @@ export const data = {
       title: "Senior Software Developer (Contract)",
       company: "Braver Health",
       period: "February 2021 - October 2021",
-      location: "Québec",
+      location: "Québec, Canada",
       responsibilities: [
         "Designed and implemented zero-knowledge telehealth backend services in Rust, Elixir, and Python handling patient data under Quebec health regulations",
         "Built secure API layer for Flutter mobile app ensuring HIPAA-equivalent compliance for medical records",

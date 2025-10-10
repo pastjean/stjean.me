@@ -110,7 +110,7 @@ h6 {
   }
 
   /* Make sure text is black but keep some elements with color */
-  h1, h2, h3, h4, h5, h6, p, span, li {
+  h1, h2, h3, h4, h5, h6, p, li {
     color: black !important;
   }
 
@@ -118,6 +118,40 @@ h6 {
   a {
     color: #0066cc !important;
     text-decoration: underline !important;
+  }
+
+  /* Preserve timeline badge colors */
+  .bg-blue-500,
+  .bg-green-500,
+  .bg-purple-500,
+  .bg-orange-500 {
+    print-color-adjust: exact !important;
+    -webkit-print-color-adjust: exact !important;
+  }
+
+  /* Specific badge background colors */
+  .bg-blue-500 {
+    background-color: #3b82f6 !important;
+  }
+
+  .bg-green-500 {
+    background-color: #22c55e !important;
+  }
+
+  .bg-purple-500 {
+    background-color: #a855f7 !important;
+  }
+
+  .bg-orange-500 {
+    background-color: #f97316 !important;
+  }
+
+  /* Keep badge text white */
+  .bg-blue-500,
+  .bg-green-500,
+  .bg-purple-500,
+  .bg-orange-500 {
+    color: white !important;
   }
 
   /* Keep borders visible */
@@ -193,5 +227,44 @@ h6 {
   .lg\:mx-0 {
     margin-left: 0 !important;
     margin-right: 0 !important;
+  }
+
+  /* Timeline-specific print styles */
+  .relative.pl-16 {
+    padding-left: 3rem !important;
+  }
+
+  /* Timeline vertical line */
+  .absolute.left-6 {
+    left: 0.75rem !important;
+    background-color: #d1d5db !important;
+    width: 1px !important;
+    print-color-adjust: exact !important;
+    -webkit-print-color-adjust: exact !important;
+  }
+
+  /* Timeline dots */
+  .absolute.left-4.rounded-full {
+    left: 0.25rem !important;
+    width: 1rem !important;
+    height: 1rem !important;
+    border-width: 2px !important;
+    print-color-adjust: exact !important;
+    -webkit-print-color-adjust: exact !important;
+  }
+
+  /* Ensure relative positioning works in print */
+  .relative {
+    position: relative !important;
+  }
+
+  .absolute {
+    position: absolute !important;
+  }
+
+  /* Make text-sm become text-xs in print */
+  .text-sm {
+    font-size: 0.75rem !important;
+    line-height: 1rem !important;
   }
 }
