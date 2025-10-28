@@ -10,7 +10,7 @@ export const data = {
   about: {
     title: "About Me",
     tech: "Core Technologies: Go, Rust, TypeScript, Python, React | Kubernetes, AWS, GCP | Event-driven systems, compliance automation",
-    description: `Full-stack engineer focusing on backend, systems, and infrastructure with 12+ years in SaaS, fintech, and regulated environments. I built payment platforms, credit card fraud detection, HR & SCIM sync for 50k+ employee orgs, and analytics at scale delivering 2.5M+ events daily. Language agnostic, with strong suits in Go, TypeScript/JavaScript, and Rust. I handle backend code, infrastructure, compliance, and lead small teams when needed. I thrive in ambiguous situations, ship iteratively, and excel at aligning everyone - from CEOs, sales to junior engineers.`,
+    description: `Product engineer and team leader with 12+ years in SaaS and fintech. I’ve built payment systems, fraud detection, HR & SCIM sync for 50k+ orgs, analytics pipelines handling millions of daily events, and led SOC 2 compliance. Language and stack agnostic with preferences for Go, TypeScript & Rust. I ship fast, scale systems, and align teams from engineers to execs.`,
   },
   education: [
     {
@@ -58,9 +58,9 @@ export const data = {
   ],
   workExperience: [
     {
-      title: "Principal Engineer (Contract)",
+      title: "Principal Engineer (contract)",
       company: "Pinata",
-      period: "March 2025 - Present",
+      period: "March 2025 - August 2025",
       location: "Remote",
       responsibilities: [
         "Built IPFS data migration system allowing clients to import content from 3 competing providers, enabling seamless platform switching",
