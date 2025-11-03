@@ -77,6 +77,10 @@ export default function ResumeTimeline() {
           subtitle: entry.publisher,
           location: entry.location,
         };
+
+      default:
+        const _exhaustiveCheck: never = entry;
+        throw new Error(`Unhandled entry type: ${(_exhaustiveCheck as any).type}`);
     }
   });
 
