@@ -1,55 +1,26 @@
 import Image from "next/image";
 import { data as resumeData } from "@/data/resume";
+import type { TimelineEntry } from "@/types/resume";
 
-// Helper function to parse dates for sorting
-function parseDate(dateStr: string): Date {
-  // Handle "Present"
-  if (dateStr.toLowerCase().includes("present")) {
-    return new Date();
+// Helper function to format date ranges
+function formatDateRange(startDate: string, endDate?: string): string {
+  const start = new Date(startDate);
+  const startFormatted = start.toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
+
+  if (!endDate) {
+    return `${startFormatted} - Present`;
   }
 
-  // Extract year and month from formats like "March 2025", "2025", "Jan 2018", etc.
-  const months: { [key: string]: number } = {
-    jan: 0,
-    january: 0,
-    feb: 1,
-    february: 1,
-    mar: 2,
-    march: 2,
-    apr: 3,
-    april: 3,
-    may: 4,
-    jun: 5,
-    june: 5,
-    jul: 6,
-    july: 6,
-    aug: 7,
-    august: 7,
-    sep: 8,
-    september: 8,
-    oct: 9,
-    october: 9,
-    nov: 10,
-    november: 10,
-    dec: 11,
-    december: 11,
-  };
+  const end = new Date(endDate);
+  const endFormatted = end.toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
 
-  const parts = dateStr.toLowerCase().split(/[\s,-]+/);
-  let year = 0;
-  let month = 0;
+  return `${startFormatted} - ${endFormatted}`;
+}
 
-  for (const part of parts) {
-    const num = parseInt(part, 10);
-    if (!Number.isNaN(num) && num > 1900) {
-      year = num;
-    }
-    if (months[part] !== undefined) {
-      month = months[part];
-    }
-  }
-
-  return new Date(year, month, 1);
+// Helper function to format single dates
+function formatSingleDate(date: string): string {
+  const d = new Date(date);
+  return d.toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
 }
 
 // Combine all items into a single timeline
@@ -65,55 +36,48 @@ type TimelineItem = {
 };
 
 export default function ResumeTimeline() {
-  // Build timeline items
-  const timelineItems: TimelineItem[] = [];
+  // Build timeline items from unified timeline array
+  const timelineItems: TimelineItem[] = resumeData.timeline.map((entry) => {
+    switch (entry.type) {
+      case "work":
+        return {
+          type: "work",
+          date: new Date(entry.endDate || entry.startDate),
+          dateStr: formatDateRange(entry.startDate, entry.endDate),
+          title: entry.position,
+          subtitle: `${entry.name} | ${entry.location}`,
+          content: entry.highlights,
+        };
 
-  // Add work experience
-  resumeData.workExperience.forEach((job) => {
-    const endDate = job.period.split("-")[1]?.trim() || job.period;
-    timelineItems.push({
-      type: "work",
-      date: parseDate(endDate),
-      dateStr: job.period,
-      title: job.title,
-      subtitle: `${job.company} | ${job.location}`,
-      content: job.responsibilities,
-    });
-  });
+      case "project":
+        return {
+          type: "project",
+          date: new Date(entry.endDate || entry.startDate),
+          dateStr: formatDateRange(entry.startDate, entry.endDate),
+          title: entry.name,
+          subtitle: entry.location,
+          description: entry.summary,
+        };
 
-  // Add education
-  resumeData.education.forEach((edu) => {
-    timelineItems.push({
-      type: "education",
-      date: parseDate(edu.year),
-      dateStr: edu.year,
-      title: edu.institution,
-      subtitle: `${edu.school} | ${edu.location}`,
-    });
-  });
+      case "education":
+        return {
+          type: "education",
+          date: new Date(entry.endDate),
+          dateStr: formatDateRange(entry.startDate, entry.endDate),
+          title: entry.institution,
+          subtitle: `${entry.studyType} ${entry.area} | ${entry.location}`,
+        };
 
-  // Add projects
-  resumeData.projects.forEach((project) => {
-    const endDate = project.period.split("-")[1]?.trim() || project.period;
-    timelineItems.push({
-      type: "project",
-      date: parseDate(endDate),
-      dateStr: project.period,
-      title: project.title,
-      subtitle: project.location,
-      description: project.description,
-    });
-  });
-
-  // Add talks
-  resumeData.talks.forEach((talk) => {
-    timelineItems.push({
-      type: "talk",
-      date: parseDate(talk.date),
-      dateStr: talk.date,
-      title: talk.title,
-      subtitle: talk.location,
-    });
+      case "talk":
+        return {
+          type: "talk",
+          date: new Date(entry.releaseDate),
+          dateStr: formatSingleDate(entry.releaseDate),
+          title: entry.name,
+          subtitle: entry.publisher,
+          location: entry.location,
+        };
+    }
   });
 
   // Sort by date (newest first)
@@ -158,7 +122,7 @@ export default function ResumeTimeline() {
         <div className="w-32 h-32 rounded-full overflow-hidden flex-shrink-0">
           <Image
             src="https://www.gravatar.com/avatar/cb4bdf0ed077f6b5a8a94f0548c982ea?s=128&d=mp"
-            alt="Pierre-Alexandre St-Jean"
+            alt={resumeData.basics.name}
             width={128}
             height={128}
             className="w-full h-full object-cover"
@@ -166,31 +130,31 @@ export default function ResumeTimeline() {
         </div>
         <div className="text-center lg:text-left flex-1">
           <h1 className="text-3xl font-bold text-gray-900 mb-1">
-            {resumeData.personal.name}
+            {resumeData.basics.name}
           </h1>
           <p className="text-base text-gray-600 tracking-wide mb-4">
-            {resumeData.personal.title}
+            {resumeData.basics.label}
           </p>
         </div>
         <div className="flex flex-col gap-2 text-sm text-gray-700">
           <div>
-            <span>{resumeData.personal.location}</span>
+            <span>{resumeData.basics.location.city}, {resumeData.basics.location.region}, {resumeData.basics.location.countryCode}</span>
           </div>
           <div>
-            <span>{resumeData.personal.phone}</span>
+            <span>{resumeData.basics.phone}</span>
           </div>
           <div>
             <a
-              href={`mailto:${resumeData.personal.website}`}
+              href={`mailto:${resumeData.basics.email}`}
               className="text-blue-600 hover:underline"
             >
-              {resumeData.personal.website}
+              {resumeData.basics.email}
             </a>
           </div>
-          {resumeData.links.items.map((link) => (
-            <div key={link.url}>
-              <a href={link.url} className="text-blue-600 hover:underline">
-                {link.label}
+          {resumeData.basics.profiles.map((profile) => (
+            <div key={profile.url}>
+              <a href={profile.url} className="text-blue-600 hover:underline">
+                {profile.network}
               </a>
             </div>
           ))}
@@ -200,10 +164,10 @@ export default function ResumeTimeline() {
       {/* About Me - Full Width on Top */}
       <div className="mb-8">
         <h2 className="text-lg font-bold text-gray-900 mb-3 tracking-wide border-b border-gray-300 pb-1">
-          {resumeData.about.title}
+          About Me
         </h2>
         <p className="text-sm text-gray-700 leading-relaxed">
-          {resumeData.about.description}
+          {resumeData.basics.summary}
         </p>
       </div>
 
