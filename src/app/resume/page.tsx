@@ -2,16 +2,22 @@ import Image from "next/image";
 import { data as resumeData } from "@/data/resume";
 import type { TimelineEntry } from "@/types/resume";
 
+// Helper function to parse ISO 8601 dates without timezone conversion
+function parseISODate(dateStr: string): Date {
+  const [year, month, day] = dateStr.split('-').map(Number);
+  return new Date(year, month - 1, day);
+}
+
 // Helper function to format date ranges
 function formatDateRange(startDate: string, endDate?: string): string {
-  const start = new Date(startDate);
+  const start = parseISODate(startDate);
   const startFormatted = start.toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
 
   if (!endDate) {
     return `${startFormatted} - Present`;
   }
 
-  const end = new Date(endDate);
+  const end = parseISODate(endDate);
   const endFormatted = end.toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
 
   return `${startFormatted} - ${endFormatted}`;
@@ -19,7 +25,7 @@ function formatDateRange(startDate: string, endDate?: string): string {
 
 // Helper function to format single dates
 function formatSingleDate(date: string): string {
-  const d = new Date(date);
+  const d = parseISODate(date);
   return d.toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
 }
 
@@ -42,7 +48,7 @@ export default function ResumeTimeline() {
       case "work":
         return {
           type: "work",
-          date: new Date(entry.endDate || entry.startDate),
+          date: parseISODate(entry.endDate || entry.startDate),
           dateStr: formatDateRange(entry.startDate, entry.endDate),
           title: entry.position,
           subtitle: `${entry.name} | ${entry.location}`,
@@ -52,7 +58,7 @@ export default function ResumeTimeline() {
       case "project":
         return {
           type: "project",
-          date: new Date(entry.endDate || entry.startDate),
+          date: parseISODate(entry.endDate || entry.startDate),
           dateStr: formatDateRange(entry.startDate, entry.endDate),
           title: entry.name,
           subtitle: entry.location,
@@ -62,7 +68,7 @@ export default function ResumeTimeline() {
       case "education":
         return {
           type: "education",
-          date: new Date(entry.endDate),
+          date: parseISODate(entry.endDate),
           dateStr: formatDateRange(entry.startDate, entry.endDate),
           title: entry.institution,
           subtitle: `${entry.studyType} ${entry.area} | ${entry.location}`,
@@ -71,7 +77,7 @@ export default function ResumeTimeline() {
       case "talk":
         return {
           type: "talk",
-          date: new Date(entry.releaseDate),
+          date: parseISODate(entry.releaseDate),
           dateStr: formatSingleDate(entry.releaseDate),
           title: entry.name,
           subtitle: entry.publisher,
