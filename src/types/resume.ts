@@ -79,14 +79,14 @@ export type Basics = {
   summary: string;
   location: Location;
   profiles: Profile[];
+};
+
+export type ResumeData = {
+  basics: Basics;
   skills?: {
     name: string;
     level: string;
     keywords: string[];
   }[];
-};
-
-export type ResumeData = {
-  basics: Basics;
   timeline: TimelineEntry[];
 };
