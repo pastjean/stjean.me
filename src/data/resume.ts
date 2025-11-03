@@ -1,4 +1,4 @@
-import type { ResumeData } from '@/types/resume';
+import type { ResumeData } from "@/types/resume";
 
 export const data: ResumeData = {
   basics: {
@@ -8,27 +8,51 @@ export const data: ResumeData = {
     email: "pa@stjean.me",
     phone: "1 (418) 952-9232",
     url: "https://pa.stjean.me",
-    summary: "Product engineer and team leader with 12+ years in SaaS and fintech. I've built payment systems, fraud detection, HR & SCIM sync for 50k+ orgs, analytics pipelines handling millions of daily events, and led SOC 2 compliance. Language and stack agnostic with preferences for Go, TypeScript & Rust. I ship fast, scale systems, and align teams from engineers to execs.",
+    summary:
+      "Product engineer and team leader with 12+ years in SaaS and fintech. I've built payment systems, fraud detection, HR & SCIM sync for 50k+ orgs, analytics pipelines handling millions of daily events, and led SOC 2 compliance. Language and stack agnostic with preferences for Go, TypeScript & Rust. I ship fast, scale systems, and align teams from engineers to execs.",
     location: {
       city: "Québec",
       countryCode: "CA",
-      region: "QC"
+      region: "QC",
     },
     profiles: [
       {
         network: "GitHub",
         username: "pastjean",
-        url: "https://github.com/pastjean"
+        url: "https://github.com/pastjean",
       },
       {
         network: "Personal Website",
         username: "pa.stjean.me",
-        url: "https://pa.stjean.me"
-      }
-    ]
+        url: "https://pa.stjean.me",
+      },
+    ],
   },
+  skills: [
+    {
+      name: "Programming Languages",
+      level: "Expert",
+      keywords: ["Go", "TypeScript", "Rust", "Python", "Elixir", "JavaScript"],
+    },
+  ],
   timeline: [
     {
+      type: "work",
+      name: "PA-Labs",
+      position: "Engineering Consultant",
+      location: "Remote",
+      url: "",
+      startDate: "2020-03-01",
+      summary: "",
+      highlights: [
+        "Consultation for infrastructure, backend, and full-stack engineering, I help people with small apps or large infrastructure infrastrure projects",
+        "2025 Fundating.ca: Built a full-stack typescript/nextjs on supabase app for dating events and matching algorithms",
+        "2025 Pinata: Built a software for IPFS data migration system allowing clients to import content from 3 competing providers, enabling seamless platform switching",
+        "2025 Pinata: Migrated infrastructure from AWS to Cloudflare/Digital Ocean with zero downtime, reducing costs by 50%",
+      ],
+    },
+    {
+      enabled: false,
       type: "work",
       name: "Pinata",
       position: "Principal Engineer (contract)",
@@ -41,7 +65,7 @@ export const data: ResumeData = {
         "Built IPFS data migration system allowing clients to import content from 3 competing providers, enabling seamless platform switching",
         "Implemented an async job queue system (River) in Go to handle parallel background processing for file imports, pinning operations, and analytics",
         "Migrated infrastructure from AWS to Cloudflare/Digital Ocean with zero downtime, reducing costs by 50%",
-      ]
+      ],
     },
     {
       type: "work",
@@ -57,7 +81,7 @@ export const data: ResumeData = {
         "Built event-driven pipeline handling real-time employee lifecycle changes with idempotent processing and conflict resolution",
         "Led SOC 2 (Type I and II) certifications and achieve compliance in under 3 months through infrastructure automation and security controls",
         "Reduced deployment time from 3 hours to <15 minutes by optimizing Docker builds and simplifying Github actions pipelines",
-      ]
+      ],
     },
     {
       type: "work",
@@ -72,9 +96,10 @@ export const data: ResumeData = {
         "Built observability infrastructure using OpenTelemetry for Python/Django platform hosting ML models on Kubernetes",
         "Reduced AWS costs 60% by optimizing resource allocation and introducing spot instances",
         "Automated SOC 2 compliance infrastructure using Drata, accelerating certification timeline",
-      ]
+      ],
     },
     {
+      enabled: false,
       type: "work",
       name: "Braver Health",
       position: "Senior Software Developer (Contract)",
@@ -87,7 +112,7 @@ export const data: ResumeData = {
         "Designed and implemented zero-knowledge telehealth backend services in Rust, Elixir, and Python handling patient data under Quebec health regulations",
         "Built secure API layer for Flutter mobile app ensuring HIPAA-equivalent compliance for medical records",
         "Implemented observability stack and incident response procedures for production systems on GCP/Kubernetes",
-      ]
+      ],
     },
     {
       type: "work",
@@ -102,7 +127,7 @@ export const data: ResumeData = {
         "Led team of 6 engineers building SCIM (System for Cross-domain Identity Management) integration connecting 1Password with enterprise identity providers (Azure AD, Okta, OneLogin)",
         "Designed bidirectional user provisioning system in Go handling automated account creation, updates, and deprovisioning",
         "Discovered and fixed critical security vulnerability in SCIM implementation, earning Security Employee of the Month",
-      ]
+      ],
     },
     {
       type: "work",
@@ -117,7 +142,7 @@ export const data: ResumeData = {
         "Led team of 5 building billing platform migration supporting new pricing tiers and multi-currency processing",
         "Architected localization system handling currency conversion, regional tax rules, and locale-specific formatting across European markets",
         "Built analytics data pipeline feeding business intelligence dashboards used by executive team for financial reporting",
-      ]
+      ],
     },
     {
       type: "work",
@@ -133,7 +158,7 @@ export const data: ResumeData = {
         "Architected banking integration layer synchronizing transactions from multiple European banks and card processors",
         "Designed data pipeline processing millions in monthly transactions, building analytics infrastructure for BI team",
         "Scaled platform infrastructure supporting company growth from 15 to 400 employees maintaining 99.9% uptime",
-      ]
+      ],
     },
     {
       type: "work",
@@ -148,7 +173,7 @@ export const data: ResumeData = {
         "Led cloud infrastructure team managing Kubernetes deployments for SaaS search platform",
         "Championed infrastructure-as-code adoption across engineering organization using Terraform",
         "Contributed to Kubernetes open source project fixing bugs in cluster management",
-      ]
+      ],
     },
     {
       type: "work",
@@ -164,7 +189,7 @@ export const data: ResumeData = {
         "Optimized Redshift database schema and queries reducing query time by 70%",
         "Implemented load balancing for database clusters handling high-volume analytics writes",
         "Built automated demo environment provisioning using Docker and Consul on AWS",
-      ]
+      ],
     },
     {
       type: "project",
@@ -174,8 +199,9 @@ export const data: ResumeData = {
       url: "",
       startDate: "2018-01-01",
       endDate: "2021-06-01",
-      summary: "Built passwordless analytics platform in Node.js and Rust optimizing water filter performance in mining operations",
-      highlights: []
+      summary:
+        "Built passwordless analytics platform in Node.js and Rust optimizing water filter performance in mining operations",
+      highlights: [],
     },
     {
       type: "education",
@@ -187,7 +213,7 @@ export const data: ResumeData = {
       startDate: "2009-09-01",
       endDate: "2013-06-01",
       score: "",
-      courses: []
+      courses: [],
     },
     {
       type: "talk",
@@ -196,7 +222,7 @@ export const data: ResumeData = {
       location: "Québec, Canada",
       releaseDate: "2018-10-01",
       url: "",
-      summary: ""
+      summary: "",
     },
     {
       type: "talk",
@@ -205,7 +231,7 @@ export const data: ResumeData = {
       location: "Québec, Canada",
       releaseDate: "2017-04-01",
       url: "",
-      summary: ""
+      summary: "",
     },
-  ]
+  ],
 };

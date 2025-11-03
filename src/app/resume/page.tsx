@@ -1,24 +1,29 @@
 import Image from "next/image";
 import { data as resumeData } from "@/data/resume";
-import type { TimelineEntry } from "@/types/resume";
 
 // Helper function to parse ISO 8601 dates without timezone conversion
 function parseISODate(dateStr: string): Date {
-  const [year, month, day] = dateStr.split('-').map(Number);
+  const [year, month, day] = dateStr.split("-").map(Number);
   return new Date(year, month - 1, day);
 }
 
 // Helper function to format date ranges
 function formatDateRange(startDate: string, endDate?: string): string {
   const start = parseISODate(startDate);
-  const startFormatted = start.toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
+  const startFormatted = start.toLocaleDateString("en-US", {
+    month: "long",
+    year: "numeric",
+  });
 
   if (!endDate) {
     return `${startFormatted} - Present`;
   }
 
   const end = parseISODate(endDate);
-  const endFormatted = end.toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
+  const endFormatted = end.toLocaleDateString("en-US", {
+    month: "long",
+    year: "numeric",
+  });
 
   return `${startFormatted} - ${endFormatted}`;
 }
@@ -26,13 +31,14 @@ function formatDateRange(startDate: string, endDate?: string): string {
 // Helper function to format single dates
 function formatSingleDate(date: string): string {
   const d = parseISODate(date);
-  return d.toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
+  return d.toLocaleDateString("en-US", { month: "long", year: "numeric" });
 }
 
 // Combine all items into a single timeline
 type TimelineItem = {
   type: "work" | "education" | "project" | "talk";
   date: Date;
+  isOngoing?: boolean; // there is no end date
   dateStr: string;
   title: string;
   subtitle?: string;
@@ -43,55 +49,64 @@ type TimelineItem = {
 
 export default function ResumeTimeline() {
   // Build timeline items from unified timeline array
-  const timelineItems: TimelineItem[] = resumeData.timeline.map((entry) => {
-    switch (entry.type) {
-      case "work":
-        return {
-          type: "work",
-          date: parseISODate(entry.endDate || entry.startDate),
-          dateStr: formatDateRange(entry.startDate, entry.endDate),
-          title: entry.position,
-          subtitle: `${entry.name} | ${entry.location}`,
-          content: entry.highlights,
-        };
+  const timelineItems: TimelineItem[] = resumeData.timeline
+    .filter((e) => e.enabled ?? true)
+    .map((entry) => {
+      switch (entry.type) {
+        case "work":
+          return {
+            type: "work",
+            isOngoing: !entry.endDate,
+            date: parseISODate(entry.endDate || entry.startDate),
+            dateStr: formatDateRange(entry.startDate, entry.endDate),
+            title: entry.position,
+            subtitle: `${entry.name} | ${entry.location}`,
+            content: entry.highlights,
+          };
 
-      case "project":
-        return {
-          type: "project",
-          date: parseISODate(entry.endDate || entry.startDate),
-          dateStr: formatDateRange(entry.startDate, entry.endDate),
-          title: entry.name,
-          subtitle: entry.location,
-          description: entry.summary,
-        };
+        case "project":
+          return {
+            type: "project",
+            date: parseISODate(entry.endDate || entry.startDate),
+            dateStr: formatDateRange(entry.startDate, entry.endDate),
+            title: entry.name,
+            subtitle: entry.location,
+            description: entry.summary,
+          };
 
-      case "education":
-        return {
-          type: "education",
-          date: parseISODate(entry.endDate),
-          dateStr: formatDateRange(entry.startDate, entry.endDate),
-          title: entry.institution,
-          subtitle: `${entry.studyType} ${entry.area} | ${entry.location}`,
-        };
+        case "education":
+          return {
+            type: "education",
+            date: parseISODate(entry.endDate),
+            dateStr: formatDateRange(entry.startDate, entry.endDate),
+            title: entry.institution,
+            subtitle: `${entry.studyType} ${entry.area} | ${entry.location}`,
+          };
 
-      case "talk":
-        return {
-          type: "talk",
-          date: parseISODate(entry.releaseDate),
-          dateStr: formatSingleDate(entry.releaseDate),
-          title: entry.name,
-          subtitle: entry.publisher,
-          location: entry.location,
-        };
-
-      default:
-        const _exhaustiveCheck: never = entry;
-        throw new Error(`Unhandled entry type: ${(_exhaustiveCheck as any).type}`);
-    }
-  });
+        case "talk":
+          return {
+            type: "talk",
+            date: parseISODate(entry.releaseDate),
+            dateStr: formatSingleDate(entry.releaseDate),
+            title: entry.name,
+            subtitle: entry.publisher,
+            location: entry.location,
+          };
+        default: {
+          const _exhaustiveCheck: never = entry;
+          throw new Error(
+            `Unhandled entry type: ${(_exhaustiveCheck as any).type}`
+          );
+        }
+      }
+    });
 
   // Sort by date (newest first)
-  timelineItems.sort((a, b) => b.date.getTime() - a.date.getTime());
+  timelineItems.sort((a, b) => {
+    if (a.isOngoing && !b.isOngoing) return -1;
+    if (!a.isOngoing && b.isOngoing) return 1;
+    return b.date.getTime() - a.date.getTime();
+  });
 
   // Style mappings for different types
   const typeStyles = {
@@ -148,7 +163,11 @@ export default function ResumeTimeline() {
         </div>
         <div className="flex flex-col gap-2 text-sm text-gray-700">
           <div>
-            <span>{resumeData.basics.location.city}, {resumeData.basics.location.region}, {resumeData.basics.location.countryCode}</span>
+            <span>
+              {resumeData.basics.location.city},{" "}
+              {resumeData.basics.location.region},{" "}
+              {resumeData.basics.location.countryCode}
+            </span>
           </div>
           <div>
             <span>{resumeData.basics.phone}</span>
