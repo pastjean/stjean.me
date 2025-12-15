@@ -45,6 +45,7 @@ export const data: ResumeData = {
       startDate: "2020-03-01",
       summary: "",
       highlights: [
+        "Integration of LLM (AI) into existing applications, engineering of prompts and backend services to support AI features augment the application and simplify user interactions",
         "Consultation for infrastructure, backend, and full-stack engineering, I help people with small apps or large infrastructure infrastrure projects",
         "2025 Fundating.ca: Built a full-stack typescript/nextjs on supabase app for dating events and matching algorithms",
         "2025 Pinata: Built a software for IPFS data migration system allowing clients to import content from 3 competing providers, enabling seamless platform switching",
